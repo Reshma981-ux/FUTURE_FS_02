@@ -12,7 +12,9 @@ mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB Connected"));
 
 app.use("/api/leads", require("./routes/leadRoutes"));
-
+app.get("/", (req, res) => {
+  res.send("CRMWeb Backend Running Successfully 🚀");
+});
 app.listen(5000, () => {
   console.log("Server running");
 });
